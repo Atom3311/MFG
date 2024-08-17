@@ -1,14 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using FishNet.Object;
 using UnityEngine;
 
-public class Animation : MonoBehaviour
+public class Animation : NetworkBehaviour
 {
     Animator animator;
-    private void Start()
+
+    public override void OnStartClient()
     {
+        base.OnStartClient();
+        if (base.IsOwner) {
+            
+        } else {
+            gameObject.GetComponent<Animation>().enabled = false;
+        }
+    }
+
+    void Start() {
         animator = GetComponent<Animator>();
     }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))

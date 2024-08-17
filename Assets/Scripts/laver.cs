@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using FishNet.Object;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class laver : MonoBehaviour
+public class laver : NetworkBehaviour
 {
     public GameObject most;
     // Start is called before the first frame update
@@ -22,28 +23,29 @@ public class laver : MonoBehaviour
                 Debug.Log("Press E");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (most.activeSelf)
-                    {
-                        most.SetActive(false);
-                        most.transform.position = new Vector3(0,0,0);
-                    }
-                    else
-                    {
-                        most.SetActive(true);
-                        most.transform.rotation = new Quaternion(-5.063f, -5.332f, -45.484f, 0);
-                    }
-
-
-
-
+                    Debug.Log(most);
+                    Debug.Log(most.activeSelf);
+                    RpcSendChat(!most.activeSelf);
                 }
             }
         }
     }
 
     // Update is called once per frame
-    void Update()
+    [ServerRpc(RunLocally = true)]
+    private void RpcSendChat(bool flag)
     {
-        
+        RpcSetNumber(flag);
+        Debug.Log("server");
+        Debug.Log(flag);
+    }
+
+    [ObserversRpc()]
+    private void RpcSetNumber(bool flag)
+    {
+        most.SetActive(flag);
+
+        Debug.Log("client");
+        Debug.Log(flag);
     }
 }

@@ -13,11 +13,11 @@ public class Death : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && collision.transform.position.y < 4.7f)
         {
             vv = collision.transform.position;
             vu = collision.transform.rotation;
-            Debug.Log("я умер");
+            Debug.Log("пїЅ пїЅпїЅпїЅпїЅ");
             newparticles = Instantiate(DeathWater, vv, vu);
             newparticles.Play();
             newparticles = Instantiate(DeathDeath, vv, vu);
