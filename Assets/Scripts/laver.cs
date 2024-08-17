@@ -25,10 +25,12 @@ public class laver : MonoBehaviour
                     if (most.activeSelf)
                     {
                         most.SetActive(false);
+                        most.transform.position = new Vector3(0,0,0);
                     }
                     else
                     {
                         most.SetActive(true);
+                        most.transform.rotation = new Quaternion(-5.063f, -5.332f, -45.484f, 0);
                     }
 
 

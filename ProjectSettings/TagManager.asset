@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FxTemporaire
   - Lever
+  - Pallete
+  - water
   layers:
   - Default
   - TransparentFX
