@@ -14,11 +14,11 @@ public class TriggerTeleportation : MonoBehaviour
         {
             NetworkObject nob = other.GetComponent<NetworkObject>();
             if(nob != null) { 
-                Teleport(nob);
+                Teleport(nob, other.gameObject);
             }
         }
     }
-    void Teleport(NetworkObject nob)
+    void Teleport(NetworkObject nob, GameObject player)
     {
         if (!nob.Owner.IsActive)
             return;
@@ -28,6 +28,7 @@ public class TriggerTeleportation : MonoBehaviour
         sld.ReplaceScenes = ReplaceOption.All;
         InstanceFinder.SceneManager.LoadConnectionScenes(nob.Owner, sld);
         // SceneManager.LoadScene("", LoadSceneMode.Additive);
+        player.transform.position = GameObject.FindWithTag("Four").transform.position;
 
     }
 }

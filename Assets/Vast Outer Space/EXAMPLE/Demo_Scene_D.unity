@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 804171189}
   m_Layer: 0
   m_Name: CheckPoint
-  m_TagString: FirstCheckpoint
+  m_TagString: Four
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804171187}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e799f3efeff1984fb3a232b233afed1, type: 3}
   m_Name: 
