@@ -11,6 +11,8 @@ using UnityEngine.UI;
 using System;
 using FishNet.Connection;
 using FishNet.Object;
+using FishNet;
+
 
 
 #if UNITY_EDITOR
