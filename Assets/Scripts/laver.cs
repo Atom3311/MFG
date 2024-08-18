@@ -17,8 +17,8 @@ public class laver : NetworkBehaviour
 {
     public GameObject most;
 
-    public readonly SyncVar<bool> _enabled = new SyncVar<bool>(new SyncTypeSettings(WritePermission.ClientUnsynchronized, ReadPermission.ExcludeOwner));
-    [ServerRpc(RunLocally = true)] private void SetName(bool value) => _enabled.Value = value;
+    public readonly SyncVar<bool> _enabled = new SyncVar<bool>();
+    [ServerRpc] private void SetName(bool value) => _enabled.Value = value;
 
     private void OnTriggerStay(Collider other)
     {
@@ -40,5 +40,8 @@ public class laver : NetworkBehaviour
                     }
                 }
         
+    }
+    private void Update() {
+        most.SetActive(_enabled.Value);
     }
 }
