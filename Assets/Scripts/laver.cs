@@ -15,7 +15,6 @@ public class laver : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (base.IsOwner) {
             if (Physics.Raycast(other.transform.position, other.transform.forward, out var hit, Mathf.Infinity))
             {
                 var obj = hit.collider.gameObject;
@@ -30,7 +29,6 @@ public class laver : NetworkBehaviour
                     }
                 }
             }
-        }
         
     }
 
