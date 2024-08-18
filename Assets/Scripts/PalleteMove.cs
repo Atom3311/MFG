@@ -9,22 +9,26 @@ public class PalleteMove : MonoBehaviour
     private bool Sostoynie = true;
     void Start()
     {
-        StartCoroutine(Move());
+        StartCoroutine(FirstMove());
     }
 
     IEnumerator Move()
     {
-        yield return new WaitForSeconds(Random.Range(1,3));
+        yield return new WaitForSeconds(3f);
         Sostoynie = false;
         StartCoroutine(ReverseMove());
     }
     IEnumerator ReverseMove()
     {
-        yield return new WaitForSeconds(Random.Range(1, 3));
+        yield return new WaitForSeconds(3f);
         Sostoynie = true;
         StartCoroutine(Move());
     }
-
+    IEnumerator FirstMove()
+    {
+        yield return new WaitForSeconds(Random.Range(1, 3));
+        StartCoroutine(Move());
+    }
 
     private void Update()
     {
