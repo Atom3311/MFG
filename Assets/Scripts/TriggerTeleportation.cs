@@ -25,10 +25,10 @@ public class TriggerTeleportation : MonoBehaviour
 
         SceneLoadData sld = new SceneLoadData("Demo_Scene_D");
         sld.MovedNetworkObjects = new NetworkObject[] { nob };
-        sld.ReplaceScenes = ReplaceOption.All;
         InstanceFinder.SceneManager.LoadConnectionScenes(nob.Owner, sld);
         // SceneManager.LoadScene("", LoadSceneMode.Additive);
         player.transform.position = GameObject.FindWithTag("Four").transform.position;
+        nob.transform.position = GameObject.FindWithTag("Four").transform.position;
 
     }
 }
