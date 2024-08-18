@@ -28,6 +28,8 @@ public class FirstPersonController : NetworkBehaviour
 
     public Camera playerCamera;
 
+    public GameObject checkpoint;
+
     public float fov = 60f;
     public bool invertCamera = false;
     public bool cameraCanMove = true;
@@ -158,6 +160,8 @@ public class FirstPersonController : NetworkBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        
+        checkpoint = GameObject.FindWithTag("FirstCheckpoint");
 
         crosshairObject = GetComponentInChildren<Image>();
 

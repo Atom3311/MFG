@@ -8,6 +8,7 @@ TagManager:
   - Lever
   - Pallete
   - water
+  - FirstCheckpoint
   layers:
   - Default
   - TransparentFX

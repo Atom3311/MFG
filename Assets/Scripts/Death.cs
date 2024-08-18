@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameKit.Dependencies.Utilities;
 using UnityEngine;
 
 public class Death : MonoBehaviour
@@ -11,9 +12,9 @@ public class Death : MonoBehaviour
     private Vector3 vv;
     private Quaternion vu;
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
-        if(collision.CompareTag("Player") && collision.transform.position.y < 4.7f)
+        if(collision.CompareTag("Player") && collision.transform.position.y <= 4.9)
         {
             vv = collision.transform.position;
             vu = collision.transform.rotation;
@@ -22,7 +23,7 @@ public class Death : MonoBehaviour
             newparticles.Play();
             newparticles = Instantiate(DeathDeath, vv, vu);
             newparticles.Play();
-
+            collision.transform.SetPosition(false, collision.gameObject.GetComponent<FirstPersonController>().checkpoint.transform.position);
         }
     }
 }
