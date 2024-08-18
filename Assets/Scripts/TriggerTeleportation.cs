@@ -29,6 +29,8 @@ public class TriggerTeleportation : MonoBehaviour
         // SceneManager.LoadScene("", LoadSceneMode.Additive);
         player.transform.position = GameObject.FindWithTag("Four").transform.position;
         nob.transform.position = GameObject.FindWithTag("Four").transform.position;
+        player.GetComponent<FirstPersonController>().checkpoint = GameObject.FindWithTag("Four");
+        nob.GetComponent<FirstPersonController>().checkpoint = GameObject.FindWithTag("Four");
 
     }
 }

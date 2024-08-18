@@ -11,10 +11,12 @@ public class DeathSpace : MonoBehaviour
     private Vector3 vv;
     private Quaternion vu;
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if(collision.collider.tag == "Player")
+        Debug.Log("vdNo");
+        if (collision.CompareTag("Player"))
         {
+            Debug.Log("vd");
             vv = collision.transform.position;
             vu = collision.transform.rotation;
             newparticles = Instantiate(DeathDeath, vv, vu);
