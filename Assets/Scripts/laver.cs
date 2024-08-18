@@ -17,7 +17,7 @@ public class laver : NetworkBehaviour
 {
     public GameObject most;
 
-    public readonly SyncVar<bool> _enabled = new SyncVar<bool>();
+    public readonly SyncVar<bool> _enabled = new SyncVar<bool>(new SyncTypeSettings(WritePermission.ClientUnsynchronized));
     [ServerRpc] private void SetName(bool value) =>  _enabled.Value = value;
 
     private void OnTriggerStay(Collider other)
