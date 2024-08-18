@@ -1,3 +1,6 @@
+using FishNet;
+using FishNet.Managing.Scened;
+using FishNet.Object;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +8,26 @@ using UnityEngine.SceneManagement;
 
 public class TriggerTeleportation : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            Teleport();
+            NetworkObject nob = other.GetComponent<NetworkObject>();
+            if(nob != null) { 
+                Teleport(nob);
+            }
         }
     }
-    void Teleport()
+    void Teleport(NetworkObject nob)
     {
-        SceneManager.LoadScene("Demo_Scene_D", LoadSceneMode.Additive);
+        if (!nob.Owner.IsActive)
+            return;
+
+        SceneLoadData sld = new SceneLoadData("Demo_Scene_D");
+        sld.MovedNetworkObjects = new NetworkObject[] { nob };
+        sld.ReplaceScenes = ReplaceOption.All;
+        InstanceFinder.SceneManager.LoadConnectionScenes(nob.Owner, sld);
+        // SceneManager.LoadScene("", LoadSceneMode.Additive);
+
     }
 }
