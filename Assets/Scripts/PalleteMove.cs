@@ -26,7 +26,7 @@ public class PalleteMove : MonoBehaviour
     }
     IEnumerator FirstMove()
     {
-        yield return new WaitForSeconds(Random.Range(1, 3));
+        yield return new WaitForSeconds(Random.Range(0.1f, 5));
         StartCoroutine(Move());
     }
 
