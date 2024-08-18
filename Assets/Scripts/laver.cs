@@ -18,7 +18,7 @@ public class laver : NetworkBehaviour
     public GameObject most;
 
     public readonly SyncVar<bool> _enabled = new SyncVar<bool>();
-    [ServerRpc] private void SetName(bool value) => _enabled.Value = value;
+    [ServerRpc] private void SetName(bool value) =>  _enabled.Value = value;
 
     private void OnTriggerStay(Collider other)
     {
@@ -34,8 +34,8 @@ public class laver : NetworkBehaviour
                             Debug.Log(most.activeSelf);
 
                         //    most.SetActive(!most.activeSelf);
-                           SetName(!most.activeSelf);
-                        //    _enabled.Value = !most.activeSelf;
+                        //    SetName(!most.activeSelf);
+                           _enabled.Value = !most.activeSelf;
                         }
                     }
                 }
