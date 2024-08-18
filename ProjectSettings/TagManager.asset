@@ -10,6 +10,7 @@ TagManager:
   - water
   - FirstCheckpoint
   - Four
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

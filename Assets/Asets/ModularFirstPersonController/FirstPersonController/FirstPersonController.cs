@@ -12,6 +12,8 @@ using System;
 using FishNet.Connection;
 using FishNet.Object;
 using FishNet;
+using GameKit.Dependencies.Utilities;
+
 
 
 
@@ -176,6 +178,13 @@ public class FirstPersonController : NetworkBehaviour
         {
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision) {
+        if(collision.CompareTag("Checkpoint"))
+        {
+           checkpoint = collision.gameObject;
         }
     }
 
