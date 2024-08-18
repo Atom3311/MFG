@@ -15,37 +15,31 @@ public class laver : NetworkBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Physics.Raycast(other.transform.position, other.transform.forward, out var hit, Mathf.Infinity))
-        {
-            var obj = hit.collider.gameObject;
-            if (obj == this.gameObject)
+        if (base.IsOwner) {
+            if (Physics.Raycast(other.transform.position, other.transform.forward, out var hit, Mathf.Infinity))
             {
-                Debug.Log("Press E");
-                if (Input.GetKeyDown(KeyCode.E))
+                var obj = hit.collider.gameObject;
+                if (obj == this.gameObject)
                 {
-                    Debug.Log(most);
-                    Debug.Log(most.activeSelf);
-                    RpcSendChat(!most.activeSelf);
+                    Debug.Log("Press E");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Debug.Log(most);
+                        Debug.Log(most.activeSelf);
+                        RpcSendChat(!most.activeSelf);
+                    }
                 }
             }
         }
+        
     }
 
     // Update is called once per frame
     [ServerRpc(RunLocally = true)]
     private void RpcSendChat(bool flag)
     {
-        RpcSetNumber(flag);
-        Debug.Log("server");
-        Debug.Log(flag);
-    }
-
-    [ObserversRpc()]
-    private void RpcSetNumber(bool flag)
-    {
         most.SetActive(flag);
-
-        Debug.Log("client");
+        Debug.Log("server");
         Debug.Log(flag);
     }
 }
