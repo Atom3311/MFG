@@ -17,7 +17,7 @@ public class laver : NetworkBehaviour
 {
     public GameObject most;
 
-    private readonly SyncVar<bool> _enabled = new SyncVar<bool>(new SyncTypeSettings(1f));
+    public readonly SyncVar<bool> _enabled = new SyncVar<bool>(new SyncTypeSettings(WritePermission.ClientUnsynchronized, ReadPermission.ExcludeOwner));
     
     private void Awake()
     {
