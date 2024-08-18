@@ -14,6 +14,6 @@ public class TriggerTeleportation : MonoBehaviour
     }
     void Teleport()
     {
-        SceneManager.LoadScene("PA_AncientVillageDay", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Demo_Scene_D", LoadSceneMode.Additive);
     }
 }
