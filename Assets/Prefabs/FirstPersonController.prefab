@@ -189,13 +189,14 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 501533907037604506}
   _networkObjectCache: {fileID: 501533907037604506}
   playerCamera: {fileID: 0}
+  checkpoint: {fileID: 0}
   fov: 60
   invertCamera: 0
   cameraCanMove: 1
   mouseSensitivity: 2
   maxLookAngle: 50
   cameraYOffset: 0.4
-  lockCursor: 1
+  lockCursor: 0
   crosshair: 0
   crosshairImage: {fileID: 21300000, guid: be4ce60e2c9768c44b9b10b9c5258045, type: 3}
   crosshairColor: {r: 1, g: 1, b: 1, a: 1}
@@ -224,8 +225,8 @@ MonoBehaviour:
   enableJump: 1
   jumpKey: 32
   jumpPower: 4
-  enableCrouch: 1
-  holdToCrouch: 1
+  enableCrouch: 0
+  holdToCrouch: 0
   crouchKey: 306
   crouchHeight: 0.75
   speedReduction: 0.5
@@ -299,7 +300,7 @@ MonoBehaviour:
   _spectatorInterpolation: 2
   _enableTeleport: 0
   _teleportThreshold: 1
-  <PrefabId>k__BackingField: 1
+  <PrefabId>k__BackingField: 0
   <SpawnableCollectionId>k__BackingField: 0
   <SceneId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 2577489239786302667
