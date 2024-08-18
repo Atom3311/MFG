@@ -33,9 +33,9 @@ public class laver : NetworkBehaviour
                             Debug.Log(most);    
                             Debug.Log(most.activeSelf);
 
-                           most.SetActive(!most.activeSelf);
+                        //    most.SetActive(!most.activeSelf);
                            SetName(!most.activeSelf);
-                           _enabled.Value = !most.activeSelf;
+                        //    _enabled.Value = !most.activeSelf;
                         }
                     }
                 }
