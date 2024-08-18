@@ -21744,18 +21744,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8738291782594057799, guid: dbd2a57d08b34234fa124d3add256cf5,
         type: 3}
-      propertyPath: _defaultDespawnType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8738291782594057799, guid: dbd2a57d08b34234fa124d3add256cf5,
-        type: 3}
       propertyPath: <SceneId>k__BackingField
       value: 3740136239
-      objectReference: {fileID: 0}
-    - target: {fileID: -8738291782594057799, guid: dbd2a57d08b34234fa124d3add256cf5,
-        type: 3}
-      propertyPath: <IsNested>k__BackingField
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1224129774918215923, guid: dbd2a57d08b34234fa124d3add256cf5,
         type: 3}
@@ -21770,6 +21760,11 @@ PrefabInstance:
     - target: {fileID: 1901621611455410376, guid: dbd2a57d08b34234fa124d3add256cf5,
         type: 3}
       propertyPath: _addedNetworkObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901621611455410376, guid: dbd2a57d08b34234fa124d3add256cf5,
+        type: 3}
+      propertyPath: _networkObjectCache
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1997112410330821193, guid: dbd2a57d08b34234fa124d3add256cf5,
